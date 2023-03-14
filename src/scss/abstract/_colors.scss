@@ -1,13 +1,8 @@
 :root {
     --background: #f7f7f7;
-    --foreground: #f9f9f9;
+    --foreground: #ffffff;
     --text: #292d36;
+    --text-hover: #464d5d;
+    --text-active: #252931;
     --light-shadow: rgba(149 157 165 / 5%);
-}
-
-html[data-theme="dark"] {
-    --background: #22252d;
-    --foreground: #292d36;
-    --text: #f9f9f9;
-    --dark-shadow: rgba(32 37 41 / 20%);
 }

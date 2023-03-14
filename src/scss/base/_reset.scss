@@ -39,6 +39,21 @@ h6 {
     overflow-wrap: break-word;
 }
 
+a {
+    color: var(--text);
+    text-decoration: none;
+    transition: var(--hover);
+
+    &:hover,
+    &:focus-visible {
+        color: var(--text-hover);
+    }
+
+    &:active {
+        color: var(--text-active);
+    }
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

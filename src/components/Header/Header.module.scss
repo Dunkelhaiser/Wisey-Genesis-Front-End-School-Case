@@ -1,0 +1,98 @@
+@use "../../scss/abstract/screen-queries.scss" as *;
+@use "../../scss/abstract/mixins.scss" as *;
+
+header {
+    @include flex($direction: row, $align: center, $gap: 3rem);
+    @include max-width;
+
+    position: relative;
+    z-index: 9999;
+
+    padding: 1.5rem 10rem;
+
+    background-color: var(--foreground);
+    box-shadow: 0 0.7rem 2.9rem 0 var(--shadow);
+
+    .content {
+        @include flex($direction: row, $align: center, $justify: space-between);
+
+        width: 100%;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .logo {
+        font-size: 2rem;
+        line-height: 1em;
+
+        &:hover,
+        &:focus-visible,
+        &:active {
+            color: inherit;
+        }
+    }
+
+    a {
+        font-weight: 700;
+    }
+
+    section {
+        @include flex($direction: row, $align: center, $gap: 3rem);
+    }
+
+    ul {
+        @include flex($direction: row, $gap: 2rem);
+
+        list-style: none;
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include respond-tablet-landscape {
+        padding: 1.5rem 5rem;
+    }
+    @include respond-tablet {
+        padding: 1.5rem 2rem;
+    }
+    @include respond-phone {
+        justify-content: space-between;
+
+        .hamburger {
+            display: flex;
+        }
+
+        .content {
+            position: absolute;
+            top: -1px;
+            right: 2rem;
+            left: 2rem;
+            transform: translateY(-100%);
+
+            flex-direction: column;
+            gap: 2rem;
+
+            width: auto;
+            padding: 2rem;
+
+            opacity: 0;
+            background-color: var(--foreground);
+            border-radius: 0.5em;
+            box-shadow: 0 0.7rem 2.9rem 0 var(--shadow);
+
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+            section,
+            ul {
+                @include flex($align: center, $gap: 1.5rem);
+            }
+
+            &.opened {
+                top: 123px;
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
