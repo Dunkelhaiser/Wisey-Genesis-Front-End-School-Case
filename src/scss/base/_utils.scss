@@ -1,0 +1,6 @@
+.page_center {
+    @include flex($gap: 2rem, $align: center, $justify: center);
+
+    width: 100%;
+    height: calc(100vh - 5rem);
+}

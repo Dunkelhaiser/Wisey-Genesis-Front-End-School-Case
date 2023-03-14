@@ -17,7 +17,7 @@ const Card: React.FC<Props> = ({ link, preview, video, title, count, rating, ski
     const [isHovered, setIsHovered] = useState(false);
     return (
         <Link
-            to={`/post/${link}`}
+            to={`/course/${link}`}
             className={CardStyles.card}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
