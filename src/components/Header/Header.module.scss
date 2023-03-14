@@ -23,11 +23,12 @@ header {
     .logo {
         font-size: 2rem;
         line-height: 1em;
+        color: var(--primary);
 
         &:hover,
         &:focus-visible,
         &:active {
-            color: inherit;
+            color: var(--primary);
         }
     }
 

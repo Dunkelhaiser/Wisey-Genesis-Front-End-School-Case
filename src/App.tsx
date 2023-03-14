@@ -1,26 +1,37 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Courses from "./pages/Courses";
 import NotFound from "./pages/NotFound";
 import "./scss/styles.scss";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Courses />,
-        errorElement: <NotFound />,
-    },
-]);
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route
+            path="/"
+            element={
+                <>
+                    <Header />
+                    <main>
+                        <Outlet />
+                    </main>
+                </>
+            }
+            errorElement={
+                <>
+                    <Header />
+                    <main>
+                        <NotFound />
+                    </main>
+                </>
+            }
+        >
+            <Route index element={<Courses />} />
+        </Route>
+    )
+);
 
 function App() {
-    return (
-        <>
-            <Header />
-            <main>
-                <RouterProvider router={router} />
-            </main>
-        </>
-    );
+    return <RouterProvider router={router} />;
 }
 
 export default App;

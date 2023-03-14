@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Hamburger from "../Hamburger/Hamburger";
 import HeaderStyles from "./Header.module.scss";
 
@@ -12,9 +13,9 @@ const Header: React.FC = () => {
 
     return (
         <header className={HeaderStyles.header}>
-            <a href="#" className={HeaderStyles.logo}>
+            <Link to="/" className={HeaderStyles.logo}>
                 Wisey
-            </a>
+            </Link>
             <section className={`${HeaderStyles.content} ${expanded ? HeaderStyles.opened : ""}`}>
                 <nav>
                     <ul>
