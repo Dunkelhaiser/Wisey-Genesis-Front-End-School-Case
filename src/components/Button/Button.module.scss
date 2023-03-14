@@ -1,0 +1,26 @@
+@use "../../scss/abstract/screen-queries.scss" as *;
+
+.button {
+    cursor: pointer;
+
+    padding: 1em 2em;
+
+    font-weight: 700;
+    color: var(--background);
+
+    background: none;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.5em;
+
+    transition: var(--hover);
+
+    &:hover,
+    &:focus-visible {
+        background-color: var(--primary-hover);
+    }
+
+    &:active {
+        background-color: var(--primary-active);
+    }
+}

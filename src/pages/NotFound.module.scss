@@ -1,0 +1,39 @@
+@use "../scss/abstract/mixins" as *;
+@use "../scss/abstract/screen-queries" as *;
+
+.not_found {
+    @include flex($gap: 2rem, $align: center, $justify: center);
+
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 5rem);
+}
+
+.background_text {
+    user-select: none;
+
+    position: absolute;
+    z-index: -1;
+
+    font-size: 50vmin;
+    color: var(--text-light);
+
+    opacity: 0.2;
+}
+
+.title {
+    margin: 0 5rem;
+    font-size: 4.2rem;
+    text-align: center;
+}
+
+.message {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+@include respond-tablet-landscape {
+    .background_text {
+        font-size: 40vmin;
+    }
+}
