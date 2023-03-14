@@ -1,3 +1,5 @@
+@use "./screen-queries" as *;
+
 @mixin flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 0, $wrap: nowrap) {
     display: flex;
     flex-flow: $direction $wrap;
@@ -7,35 +9,14 @@
 }
 
 @mixin max-width() {
+    @include respond-tablet-landscape {
+        padding: 1.5rem 5rem;
+    }
+    @include respond-tablet {
+        padding: 1.5rem 2rem;
+    }
+
     max-width: 120rem;
     margin: 0 auto;
-    padding: 2.5rem 10rem;
-
-    &::before {
-        content: "";
-
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-
-        width: 100vw;
-        height: 100%;
-
-        background: inherit;
-    }
-
-    &::after {
-        content: "";
-
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: 0;
-
-        width: 100vw;
-        height: 100%;
-
-        background: inherit;
-    }
+    padding: 1.5rem 10rem;
 }

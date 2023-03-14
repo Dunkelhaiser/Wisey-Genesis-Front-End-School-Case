@@ -1,0 +1,20 @@
+.star_filled {
+    z-index: 2;
+    color: var(--gold);
+}
+
+.star {
+    color: var(--text-light);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.underlay {
+    position: absolute;
+    display: flex;
+    gap: 0.25rem;
+}

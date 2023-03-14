@@ -7,9 +7,6 @@ header {
 
     position: relative;
     z-index: 9999;
-
-    padding: 1.5rem 10rem;
-
     background-color: var(--foreground);
     box-shadow: 0 0.7rem 2.9rem 0 var(--shadow);
 
@@ -49,12 +46,6 @@ header {
     }
 
     /* stylelint-disable-next-line order/order */
-    @include respond-tablet-landscape {
-        padding: 1.5rem 5rem;
-    }
-    @include respond-tablet {
-        padding: 1.5rem 2rem;
-    }
     @include respond-phone {
         justify-content: space-between;
 

@@ -1,0 +1,78 @@
+@use "../../scss/abstract/mixins" as *;
+@use "../../scss/abstract/screen-queries" as *;
+
+.card {
+    @include flex($align: stretch);
+
+    position: relative;
+    top: 0;
+
+    overflow: hidden;
+
+    min-height: 100%;
+
+    background: var(--foreground);
+    border-radius: 8px;
+    box-shadow: 0 0 1rem 0 var(--light-shadow);
+
+    transition: var(--hover);
+
+    &:hover {
+        top: -2px;
+        box-shadow: 0 4px 5px var(--light-shadow);
+    }
+
+    article {
+        @include flex($justify: space-between, $align: stretch, $gap: 1rem);
+
+        padding: 2.2rem;
+
+        & > div {
+            @include flex($direction: row, $justify: space-between);
+
+            @include respond-phone {
+                flex-direction: column-reverse;
+                gap: 1rem;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 1.125rem;
+        color: var(--text);
+    }
+
+    span {
+        font-size: 0.875rem;
+        font-weight: bold;
+        color: var(--text-light);
+    }
+
+    .skills {
+        @include flex($direction: row, $gap: 0.5rem, $wrap: wrap);
+    }
+
+    .skill {
+        cursor: pointer;
+
+        overflow: hidden;
+
+        max-width: 6rem;
+        padding: 0.15rem 1rem;
+
+        font-size: 0.75rem;
+        color: var(--text);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        background-color: var(--foreground);
+        border: 0.5px solid var(--text);
+        border-radius: 0.5em;
+    }
+
+    .thumb {
+        padding-bottom: 60%;
+        background-position: center center;
+        background-size: cover;
+    }
+}
