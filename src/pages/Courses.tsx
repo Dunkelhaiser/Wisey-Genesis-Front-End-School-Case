@@ -26,7 +26,7 @@ const Courses = () => {
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
                 count={2}
-                rating={3.5}
+                rating={3.75}
                 skills={[
                     "Aligning your goals with your motives",
                     "Overcoming decision paralysis",
@@ -40,7 +40,7 @@ const Courses = () => {
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
                 count={2}
-                rating={3.5}
+                rating={2.5}
                 skills={[
                     "Aligning your goals with your motives",
                     "Overcoming decision paralysis",
@@ -54,7 +54,7 @@ const Courses = () => {
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
                 count={2}
-                rating={3.5}
+                rating={4}
                 skills={[
                     "Aligning your goals with your motives",
                     "Overcoming decision paralysis",
@@ -68,7 +68,7 @@ const Courses = () => {
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
                 count={2}
-                rating={3.5}
+                rating={5}
                 skills={[
                     "Aligning your goals with your motives",
                     "Overcoming decision paralysis",
@@ -79,10 +79,10 @@ const Courses = () => {
                 link="lack-of-motivation-how-to-overcome-it"
             />
             <Card
-                title="Lack of Motivation & How to Overcome It"
+                title="Lack of Motivation"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
                 count={2}
-                rating={3.5}
+                rating={4.5}
                 skills={[
                     "Aligning your goals with your motives",
                     "Overcoming decision paralysis",

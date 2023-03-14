@@ -19,7 +19,7 @@ const Stars: React.FC<Props> = ({ rating }) => {
                 if (index < Math.floor(rating)) {
                     return <FontAwesomeIcon icon={faStar} className={StarsStyles.star_filled} key={uuid()} />;
                 }
-                if (index === Math.floor(rating)) {
+                if (index === Math.floor(rating) && !Number.isInteger(rating)) {
                     return <FontAwesomeIcon icon={faStarHalf} className={StarsStyles.star_filled} key={uuid()} />;
                 }
                 return <FontAwesomeIcon icon={faStar} className={StarsStyles.star} key={uuid()} />;
