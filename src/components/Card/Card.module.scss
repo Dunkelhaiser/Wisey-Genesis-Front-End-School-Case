@@ -71,8 +71,20 @@
     }
 
     .thumb {
+        position: relative;
         padding-bottom: 60%;
-        background-position: center center;
-        background-size: cover;
+
+        img,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
     }
 }

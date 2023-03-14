@@ -25,6 +25,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={3.75}
                 skills={[
@@ -38,7 +39,8 @@ const Courses = () => {
             />
             <Card
                 title="Lack of Motivation & How to Overcome It"
-                preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                preview="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={2.5}
                 skills={[
@@ -52,7 +54,8 @@ const Courses = () => {
             />
             <Card
                 title="Lack of Motivation & How to Overcome It"
-                preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                preview="https://interactive-examples.mdn.mozilla.net/media/examples/plumeria.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={4}
                 skills={[
@@ -67,6 +70,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={5}
                 skills={[
@@ -81,6 +85,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={4.5}
                 skills={[
@@ -95,6 +100,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={3.5}
                 skills={[
@@ -109,6 +115,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={3.5}
                 skills={[
@@ -123,6 +130,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={3.5}
                 skills={[
@@ -137,6 +145,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={3.5}
                 skills={[
@@ -151,6 +160,7 @@ const Courses = () => {
             <Card
                 title="Lack of Motivation & How to Overcome It"
                 preview="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg"
+                video="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 count={2}
                 rating={3.5}
                 skills={[
