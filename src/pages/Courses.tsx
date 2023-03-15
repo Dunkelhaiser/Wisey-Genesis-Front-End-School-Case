@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import Card from "../components/Card/Card";
 import Layout from "../components/Layout/Layout";
 import LayoutStyles from "../components/Layout/Layout.module.scss";
@@ -14,7 +13,11 @@ const Courses = () => {
     // };
 
     // useEffect(() => {
-    //     fetch("http://api.wisey.app/api/v1/core/preview-courses", requestOptions)
+    //     const requestOptions = {
+    //         method: "GET",
+    //         redirect: "follow",
+    //     };
+    //     fetch("http://api.wisey.app/api/v1/auth/anonymous?platform=subscriptions")
     //         .then((response) => response.text())
     //         .then((result) => console.log(result))
     //         .catch((error) => console.log("error", error));

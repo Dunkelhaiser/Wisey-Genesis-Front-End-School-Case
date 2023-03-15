@@ -1,0 +1,64 @@
+@use "../../scss/abstract/mixins" as *;
+@use "../../scss/abstract/screen-queries" as *;
+
+.lesson {
+    @include flex($direction: row, $gap: 1.5rem);
+
+    cursor: pointer;
+
+    position: relative;
+    top: 0;
+
+    padding: 1.5rem 2rem;
+
+    background-color: var(--foreground);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem 0 var(--light-shadow);
+
+    transition: var(--hover);
+
+    &:hover {
+        top: -2px;
+        box-shadow: 0 4px 5px var(--light-shadow);
+    }
+
+    &.active {
+        color: var(--background);
+        background-color: var(--primary);
+
+        span {
+            color: var(--background);
+        }
+
+        .check {
+            color: var(--background);
+        }
+    }
+}
+
+.stats {
+    @include flex($gap: 0.5rem);
+}
+
+.time {
+    @include flex($direction: row, $align: center, $gap: 0.5rem);
+
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.check {
+    margin-top: 0.15rem;
+    font-size: 1.35rem;
+    color: var(--primary);
+}
+
+.lock {
+    align-self: center;
+    margin-left: auto;
+}
+
+.title {
+    font-size: 1.1rem;
+}

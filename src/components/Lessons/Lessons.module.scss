@@ -1,0 +1,6 @@
+@use "../../scss/abstract/mixins" as *;
+@use "../../scss/abstract/screen-queries" as *;
+
+.lessons {
+    @include flex($gap: 1.5rem, $align: stretch);
+}
