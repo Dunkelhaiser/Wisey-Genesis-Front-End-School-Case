@@ -47,5 +47,5 @@ const Player: React.FC<Props> = ({ source, preview }) => {
     };
     return <video className={PlayerStyles.player} poster={preview} controls ref={videoRef} onTimeUpdate={handleTimeUpdate} />;
 };
-Player.displayName = "Player";
+
 export default Player;
