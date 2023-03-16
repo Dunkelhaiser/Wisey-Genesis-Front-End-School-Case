@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import Hls from "hls.js/dist/hls.min";
 import Stars from "../Stars/Stars";
 import CardStyles from "./Card.module.scss";
 
@@ -15,6 +18,26 @@ interface Props {
 }
 const Card: React.FC<Props> = ({ link, preview, video, title, count, rating, skills }) => {
     const [isHovered, setIsHovered] = useState(false);
+
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const videoPreview = videoRef.current;
+
+        let hls: Hls;
+
+        if (Hls.isSupported() && videoPreview) {
+            hls = new Hls();
+            hls.loadSource(video);
+            hls.attachMedia(videoPreview);
+        }
+        return () => {
+            if (hls) {
+                hls.destroy();
+            }
+        };
+    }, [video, isHovered]);
+
     return (
         <Link
             to={`/course/${link}`}
@@ -23,13 +46,7 @@ const Card: React.FC<Props> = ({ link, preview, video, title, count, rating, ski
             onMouseLeave={() => setIsHovered(false)}
         >
             <div className={CardStyles.thumb}>
-                {isHovered ? (
-                    <video autoPlay loop muted>
-                        <source src={video} type="application/x-mpegURL" />
-                    </video>
-                ) : (
-                    <img src={preview} alt="Preview" />
-                )}
+                {isHovered ? <video autoPlay loop muted ref={videoRef} /> : <img src={preview} alt="Preview" />}
             </div>
             <article>
                 <h2>{title}</h2>
