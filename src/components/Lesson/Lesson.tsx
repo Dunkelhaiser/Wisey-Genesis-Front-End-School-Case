@@ -1,6 +1,6 @@
 import { faClock, faCheckCircle, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LessonContext } from "../../store/LessonContext";
 import LessonStyles from "./Lesson.module.scss";
 
@@ -21,6 +21,10 @@ const standardTime = (totalMins: number) => {
 
 const Lesson: React.FC<LessonType> = ({ order, title, duration, status, link }) => {
     const { lesson, setLesson } = useContext(LessonContext);
+    const [completed, setComplited] = useState(false);
+    useEffect(() => {
+        setComplited(localStorage.getItem(`video_${link}_completion`) === "true");
+    }, []);
     return (
         <div
             className={`${LessonStyles.lesson} ${lesson === link ? LessonStyles.active : ""}`}
@@ -28,7 +32,7 @@ const Lesson: React.FC<LessonType> = ({ order, title, duration, status, link }) 
             role="button"
             tabIndex={0}
         >
-            <FontAwesomeIcon icon={faCheckCircle} className={LessonStyles.check} />
+            {completed && <FontAwesomeIcon icon={faCheckCircle} className={LessonStyles.check} />}
             <div className={LessonStyles.stats}>
                 <h3>
                     {order}. {title}

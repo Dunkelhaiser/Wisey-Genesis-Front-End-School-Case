@@ -65,6 +65,9 @@ const Course = () => {
         if (videoRef.current) {
             const { currentTime } = videoRef.current;
             localStorage.setItem(`video_${lesson}_time`, String(currentTime));
+            if (currentTime === videoRef.current.duration) {
+                localStorage.setItem(`video_${lesson}_completion`, "true");
+            }
         }
     };
 
