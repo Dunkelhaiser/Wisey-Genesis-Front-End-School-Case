@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState } from "react";
 
-interface LessonType {
+export interface LessonType {
     duration: number;
     id?: string;
     link: string;

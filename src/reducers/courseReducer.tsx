@@ -1,3 +1,5 @@
+import { LessonType } from "../store/LessonContext";
+
 export interface Course {
     containsLockedLessons: boolean;
     description: string;
@@ -18,16 +20,7 @@ export interface Course {
             previewImageLink: string;
         };
     };
-    lessons: {
-        duration: number;
-        id: string;
-        link: string;
-        order: number;
-        previewImageLink: string;
-        status: string;
-        title: string;
-        type: string;
-    }[];
+    lessons: LessonType[];
 }
 
 export const init = {

@@ -1,17 +1,8 @@
 import { faClock, faCheckCircle, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useEffect, useState } from "react";
-import { LessonContext } from "../../store/LessonContext";
+import { LessonContext, LessonType } from "../../store/LessonContext";
 import LessonStyles from "./Lesson.module.scss";
-
-export interface LessonType {
-    order: number;
-    title: string;
-    duration: number;
-    status: string;
-    link: string;
-    previewImageLink: string;
-}
 
 const standardTime = (totalMins: number) => {
     const hours = Math.floor(totalMins / 60);

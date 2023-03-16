@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
-import Lesson, { LessonType } from "../Lesson/Lesson";
+import { LessonType } from "../../store/LessonContext";
+import Lesson from "../Lesson/Lesson";
 import LessonsStyles from "./Lessons.module.scss";
 
 interface Props {
