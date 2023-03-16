@@ -24,7 +24,7 @@ const Lesson: React.FC<LessonType> = ({ order, title, duration, status, link }) 
     return (
         <div
             className={`${LessonStyles.lesson} ${lesson === link ? LessonStyles.active : ""}`}
-            onClick={() => setLesson(link)}
+            onClick={status === "unlocked" ? () => setLesson(link) : undefined}
             role="button"
             tabIndex={0}
         >

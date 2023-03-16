@@ -9,7 +9,7 @@ interface Props {
 const Lessons: React.FC<Props> = ({ lessons }) => {
     return (
         <section className={LessonsStyles.lessons}>
-            {lessons.map((lesson) => (
+            {lessons?.map((lesson) => (
                 <Lesson
                     order={lesson.order}
                     title={lesson.title}
