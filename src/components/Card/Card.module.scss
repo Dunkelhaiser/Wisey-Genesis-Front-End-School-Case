@@ -53,11 +53,15 @@
     }
 
     .skill {
+        @include respond-phone {
+            max-width: 6rem;
+        }
+
         cursor: pointer;
 
         overflow: hidden;
 
-        max-width: 6rem;
+        max-width: 10rem;
         padding: 0.15rem 1rem;
 
         font-size: 0.75rem;

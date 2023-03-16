@@ -7,8 +7,13 @@
 
 .courses {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+
+    h1 {
+        grid-column: 1/-1;
+        font-size: 2.2rem;
+    }
 
     /* stylelint-disable-next-line order/order */
     @include respond-phone {
@@ -18,4 +23,11 @@
 
 .course {
     @include flex($gap: 1.5rem, $align: stretch);
+}
+
+.info {
+    grid-column: 1/-1;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
 }

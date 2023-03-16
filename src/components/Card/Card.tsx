@@ -23,7 +23,13 @@ const Card: React.FC<Props> = ({ link, preview, video, title, count, rating, ski
             onMouseLeave={() => setIsHovered(false)}
         >
             <div className={CardStyles.thumb}>
-                {isHovered ? <video src={video} autoPlay loop muted /> : <img src={preview} alt="Preview" />}
+                {isHovered ? (
+                    <video autoPlay loop muted>
+                        <source src={video} type="application/x-mpegURL" />
+                    </video>
+                ) : (
+                    <img src={preview} alt="Preview" />
+                )}
             </div>
             <article>
                 <h2>{title}</h2>
@@ -33,7 +39,7 @@ const Card: React.FC<Props> = ({ link, preview, video, title, count, rating, ski
                 </div>
                 <span className={CardStyles.skills}>
                     Skills:{" "}
-                    {skills.map((skill) => (
+                    {skills?.map((skill) => (
                         <span key={uuid()} className={CardStyles.skill}>
                             {skill}
                         </span>

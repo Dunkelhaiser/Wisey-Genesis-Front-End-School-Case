@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import CourseHeader from "../components/CourseHeader/CourseHeader";
 import Layout from "../components/Layout/Layout";
 import Lessons from "../components/Lessons/Lessons";
@@ -7,7 +8,37 @@ import LayoutStyles from "../components/Layout/Layout.module.scss";
 import { LessonContext } from "../store/LessonContext";
 
 const Course = () => {
+    const params = useParams();
+    const [course, setCourse] = useState();
     const { lesson } = useContext(LessonContext);
+
+    useEffect(() => {
+        let token: { token: string };
+        const fetchCourses = async () => {
+            try {
+                const res = await fetch(`https://api.wisey.app/api/v1/core/preview-courses/${params.id}`, {
+                    headers: {
+                        Authorization: `Bearer ${token.token}`,
+                    },
+                });
+                const selectedCourse = await res.json();
+                setCourse(selectedCourse);
+                console.log(selectedCourse);
+            } catch (error) {
+                console.log("error", error);
+            }
+        };
+        const getToken = async () => {
+            try {
+                const res = await fetch("https://api.wisey.app/api/v1/auth/anonymous?platform=subscriptions");
+                token = await res.json();
+                fetchCourses();
+            } catch (err) {
+                console.log("error", err);
+            }
+        };
+        getToken();
+    }, []);
 
     return (
         <Layout className={LayoutStyles.course}>
