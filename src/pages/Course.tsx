@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer, useRef } from "react";
+import { useContext, useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import CourseHeader from "../components/CourseHeader/CourseHeader";
 import Layout from "../components/Layout/Layout";
@@ -10,7 +10,6 @@ import { courseReducer, init, Course as CourseType } from "../reducers/courseRed
 import Loading from "./Loading";
 
 const Course = () => {
-    const videoRef = useRef<HTMLVideoElement>(null);
     const [state, dispatch] = useReducer(courseReducer, init);
     const params = useParams();
     const { lesson } = useContext(LessonContext);
@@ -54,23 +53,6 @@ const Course = () => {
         getToken();
     }, []);
 
-    useEffect(() => {
-        const storedTime = localStorage.getItem(`video_${lesson}_time`);
-        if (storedTime && videoRef.current) {
-            videoRef.current.currentTime = Number(storedTime);
-        }
-    }, [lesson]);
-
-    const handleTimeUpdate = () => {
-        if (videoRef.current) {
-            const { currentTime } = videoRef.current;
-            localStorage.setItem(`video_${lesson}_time`, String(currentTime));
-            if (currentTime === videoRef.current.duration) {
-                localStorage.setItem(`video_${lesson}_completion`, "true");
-            }
-        }
-    };
-
     const loading = state.loading && <Loading />;
     const error = state.error && (
         <Layout>
@@ -86,7 +68,7 @@ const Course = () => {
                 date={state.course.launchDate}
                 skills={state.course.meta?.skills}
             />
-            <Player source={lesson || state.course.meta?.courseVideoPreview.link} ref={videoRef} onTimeUpdate={handleTimeUpdate} />
+            <Player source={lesson || state.course.meta?.courseVideoPreview.link} />
             <Lessons lessons={state.course.lessons} />
         </Layout>
     );

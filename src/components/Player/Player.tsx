@@ -6,12 +6,10 @@ import PlayerStyles from "./Player.module.scss";
 
 interface Props {
     source: string;
-    onTimeUpdate: () => void;
-    ref: React.Ref<HTMLVideoElement>;
 }
 
-const Player: React.FC<Props> = forwardRef(({ source, onTimeUpdate }, ref) => {
-    const videoRef = useRef(null);
+const Player: React.FC<Props> = forwardRef(({ source }) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -29,7 +27,24 @@ const Player: React.FC<Props> = forwardRef(({ source, onTimeUpdate }, ref) => {
             }
         };
     }, [source]);
-    return <video className={PlayerStyles.player} controls ref={videoRef} onTimeUpdate={onTimeUpdate} />;
+
+    useEffect(() => {
+        const storedTime = localStorage.getItem(`video_${source}_time`);
+        if (storedTime && videoRef.current) {
+            videoRef.current.currentTime = Number(storedTime);
+        }
+    }, [source]);
+
+    const handleTimeUpdate = () => {
+        if (videoRef.current) {
+            const { currentTime } = videoRef.current;
+            localStorage.setItem(`video_${source}_time`, String(currentTime));
+            if (currentTime === videoRef.current.duration) {
+                localStorage.setItem(`video_${source}_completion`, "true");
+            }
+        }
+    };
+    return <video className={PlayerStyles.player} controls ref={videoRef} onTimeUpdate={handleTimeUpdate} />;
 });
 Player.displayName = "Player";
 export default Player;
