@@ -57,6 +57,18 @@ Web App is made with React. For routing is used React Router. Every component is
 
 ![](./Screenshoots/Course%20Page%20Lesson%20Completed.png)
 
+### Course Page Picture In Picture
+
+![](./Screenshoots/Picture%20In%20Picture.png)
+
+### Main Page Picture In Picture
+
+![](./Screenshoots/Picture%20In%20Picture%202.png)
+
 ### Course Page Phone
 
 ![](./Screenshoots/Course%20Page%20Phone.png)
+
+### Error Page
+
+![](./Screenshoots/Error%20Screen.png)
