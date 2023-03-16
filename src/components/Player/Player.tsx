@@ -6,9 +6,10 @@ import PlayerStyles from "./Player.module.scss";
 
 interface Props {
     source: string;
+    preview: string;
 }
 
-const Player: React.FC<Props> = forwardRef(({ source }) => {
+const Player: React.FC<Props> = forwardRef(({ source, preview }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -44,7 +45,7 @@ const Player: React.FC<Props> = forwardRef(({ source }) => {
             }
         }
     };
-    return <video className={PlayerStyles.player} controls ref={videoRef} onTimeUpdate={handleTimeUpdate} />;
+    return <video className={PlayerStyles.player} poster={preview} controls ref={videoRef} onTimeUpdate={handleTimeUpdate} />;
 });
 Player.displayName = "Player";
 export default Player;

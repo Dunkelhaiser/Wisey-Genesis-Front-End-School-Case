@@ -68,7 +68,13 @@ const Course = () => {
                 date={state.course.launchDate}
                 skills={state.course.meta?.skills}
             />
-            <Player source={lesson || state.course.meta?.courseVideoPreview.link} />
+            <Player
+                source={lesson.link || state.course.meta?.courseVideoPreview.link}
+                preview={
+                    `${lesson.previewImageLink}/lesson-${lesson.order}.webp` ||
+                    `${state.course.meta?.courseVideoPreview.previewImageLink}/preview.webp`
+                }
+            />
             <Lessons lessons={state.course.lessons} />
         </Layout>
     );

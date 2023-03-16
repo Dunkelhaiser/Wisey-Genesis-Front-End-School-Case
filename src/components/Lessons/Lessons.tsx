@@ -16,6 +16,7 @@ const Lessons: React.FC<Props> = ({ lessons }) => {
                     duration={lesson.duration}
                     status={lesson.status}
                     link={lesson.link}
+                    previewImageLink={lesson.previewImageLink}
                     key={uuid()}
                 />
             ))}

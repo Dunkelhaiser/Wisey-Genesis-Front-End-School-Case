@@ -10,6 +10,7 @@ export interface LessonType {
     duration: number;
     status: string;
     link: string;
+    previewImageLink: string;
 }
 
 const standardTime = (totalMins: number) => {
@@ -19,7 +20,7 @@ const standardTime = (totalMins: number) => {
     return `${hours}h ${minutes > 0 ? `${minutes}m` : ""}`;
 };
 
-const Lesson: React.FC<LessonType> = ({ order, title, duration, status, link }) => {
+const Lesson: React.FC<LessonType> = ({ order, title, duration, status, link, previewImageLink }) => {
     const { lesson, setLesson } = useContext(LessonContext);
     const [completed, setComplited] = useState(false);
     useEffect(() => {
@@ -27,8 +28,8 @@ const Lesson: React.FC<LessonType> = ({ order, title, duration, status, link }) 
     }, []);
     return (
         <div
-            className={`${LessonStyles.lesson} ${lesson === link ? LessonStyles.active : ""}`}
-            onClick={status === "unlocked" ? () => setLesson(link) : undefined}
+            className={`${LessonStyles.lesson} ${lesson.link === link ? LessonStyles.active : ""}`}
+            onClick={status === "unlocked" ? () => setLesson({ order, title, duration, status, link, previewImageLink }) : undefined}
             role="button"
             tabIndex={0}
         >
