@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Hls from "hls.js/dist/hls.min";
@@ -9,7 +9,7 @@ interface Props {
     preview: string;
 }
 
-const Player: React.FC<Props> = forwardRef(({ source, preview }) => {
+const Player: React.FC<Props> = ({ source, preview }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
@@ -46,6 +46,6 @@ const Player: React.FC<Props> = forwardRef(({ source, preview }) => {
         }
     };
     return <video className={PlayerStyles.player} poster={preview} controls ref={videoRef} onTimeUpdate={handleTimeUpdate} />;
-});
+};
 Player.displayName = "Player";
 export default Player;
