@@ -35,7 +35,7 @@ const Course = () => {
                     const json = await res.json();
                     setCourse(json);
                 } else if (res.status === 400) {
-                    setCourse({});
+                    setCourse({} as CourseType);
                 } else {
                     setError();
                 }
