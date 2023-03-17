@@ -8,6 +8,7 @@ import LayoutStyles from "../components/Layout/Layout.module.scss";
 import { LessonContext } from "../store/LessonContext";
 import { courseReducer, init, Course as CourseType } from "../reducers/courseReducer";
 import Loading from "./Loading";
+import NotFound from "./NotFound";
 
 const Course = () => {
     const [state, dispatch] = useReducer(courseReducer, init);
@@ -33,6 +34,8 @@ const Course = () => {
                 if (res.ok) {
                     const json = await res.json();
                     setCourse(json);
+                } else if (res.status === 400) {
+                    setCourse({});
                 } else {
                     setError();
                 }
@@ -59,6 +62,7 @@ const Course = () => {
             <p className={LayoutStyles.info}>Error!</p>
         </Layout>
     );
+    const nullInfo = !state.course.title && !state.error && <NotFound />;
     const courseContent = state.course.title && (
         <Layout className={LayoutStyles.course}>
             <CourseHeader
@@ -84,6 +88,7 @@ const Course = () => {
         <>
             {loading}
             {error}
+            {nullInfo}
             {courseContent}
         </>
     );
